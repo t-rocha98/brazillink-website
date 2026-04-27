@@ -638,3 +638,35 @@ body{background:var(--bg); color:var(--text);}
   .video-overlay h1{font-size:1.5rem}
   .btn-signup{padding:10px 18px; font-size:0.9rem}
 }
+/* 📱 Updated Mobile Hero Fix */
+@media (max-width: 600px) {
+  .video-header {
+    height: 80vh; /* Keeps the impact but fits better */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .video-overlay {
+    position: relative;
+    left: 0 !important; /* Forces the 6% from desktop to disappear */
+    width: 90%; /* Keeps a small margin on the sides */
+    margin: 0 auto;
+    text-align: center;
+    padding: 0;
+  }
+
+  .video-overlay h1 {
+    font-size: 1.7rem !important; /* !important ensures it overrides the desktop style */
+    line-height: 1.2;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  .video-overlay .lead {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin: 0 auto 20px;
+    width: 100%;
+  }
+}
