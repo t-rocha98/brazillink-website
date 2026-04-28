@@ -702,3 +702,80 @@ body{background:var(--bg); color:var(--text);}
   }
 }
 }
+/* 📱 Mobile Button Stacking Fix */
+@media (max-width: 600px) {
+  
+  .signup-section .btn-group {
+    display: flex !important;
+    flex-direction: column !important; /* Forces one button on top of the other */
+    align-items: center !important;
+    gap: 15px !important; /* Space between the two buttons */
+    width: 100% !important;
+  }
+
+  .signup-section .btn {
+    /* Basic Layout */
+    display: block !important;
+    width: 90% !important; /* Occupy most of the screen width */
+    max-width: 320px !important; /* Don't let them get too fat on tablets */
+    margin: 0 auto !important;
+    
+    /* Text Handling */
+    white-space: normal !important; /* Allows the text to wrap if it MUST */
+    text-align: center !important;
+    line-height: 1.2 !important;
+    
+    /* Sizing */
+    padding: 16px 15px !important; /* Vertical padding first, horizontal second */
+    height: auto !important; /* Ensures the button grows if text hits two lines */
+    box-sizing: border-box !important;
+  }
+  
+  /* Ensuring the text inside the buttons doesn't feel too cramped */
+  .btn-placement, .btn-signup {
+    font-size: 0.95rem !important;
+  }
+}
+/* 🛠️ The "Safety Reset" to fix cutting/overflow */
+@media (max-width: 600px) {
+  
+  /* 1. Prevent the whole page from horizontal scrolling */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+
+  /* 2. Fix the Signup Section container */
+  .signup-section {
+    width: 100% !important;
+    max-width: 100vw !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 3. Ensure the Button Group doesn't push the edges */
+  .btn-group {
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 4. Fix any other potential wider-than-screen elements */
+  .container, .intro-container, .features-grid, .path-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 20px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 5. One last tweak for the buttons */
+  .signup-section .btn {
+    width: 100% !important; /* Take full available space inside the padding */
+    max-width: 280px !important; /* Slightly smaller to be safe */
+  }
+}
