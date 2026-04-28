@@ -669,4 +669,36 @@ body{background:var(--bg); color:var(--text);}
     margin: 0 auto 20px;
     width: 100%;
   }
+/* 📱 Final CTA Mobile Fix */
+@media (max-width: 600px) {
+  
+  .signup-section {
+    padding: 60px 20px !important; /* Reduce that massive desktop padding */
+  }
+
+  .signup-section .btn-group {
+    display: flex !important;
+    flex-direction: column !important; /* Forces vertical stacking */
+    align-items: center !important;
+    gap: 15px !important;
+    width: 100%;
+  }
+
+  .signup-section .btn {
+    width: 100% !important; /* Make buttons full width of their container */
+    max-width: 300px; /* But don't let them get awkwardly wide */
+    margin: 0 auto !important;
+    display: block !important;
+    padding: 16px 20px !important;
+    font-size: 1rem !important;
+  }
+
+  /* Fix for the trust icons overlapping */
+  .trust-row {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin-top: 30px !important;
+  }
+}
 }
