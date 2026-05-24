@@ -1,0 +1,22 @@
+name: Enviar Site para a Locaweb
+
+on:
+  push:
+    branches:
+      - main  # Se a sua ramificação principal se chamar 'master', mude essa palavra para master
+
+jobs:
+  web-deploy:
+    name: Deploy do Site
+    runs-on: ubuntu-latest
+    steps:
+    - name: Pegando o código mais recente
+      uses: actions/checkout@v4
+      
+    - name: Sincronizando arquivos via FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        server-dir: public_html/  # Esta é a pasta padrão da Locaweb. Se o seu site antigo ficava em outra pasta, mude aqui.
